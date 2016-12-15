@@ -1,0 +1,42 @@
+.crud {
+  color: grey;
+}
+.crud-table{
+    font-size: 20px;
+}
+span.error {
+    color: #800000;
+}
+input.ng-invalid.ng-touched {
+    border-color: #FA787E;
+  }
+
+input.ng-valid.ng-touched  {
+    border-color: #78FA89;
+  }
+  .container {
+    margin-top:10px;
+    font-family:arial;
+}
+input:focus {
+    //change more attributes, if you want.
+}
+input {
+    border:none;
+    background-color:transparent;
+}
+.dataeditable input {
+    background: #e6e6e6;
+    margin: 5px;
+    border: 1px solid #03A9F4;
+}
+.container header {
+    padding-bottom:20px;
+    border-bottom:1px solid black;
+}
+ul, input, .container {
+    padding:10px;
+}
+form{
+    background: #516c79;
+}

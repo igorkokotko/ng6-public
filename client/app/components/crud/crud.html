@@ -1,0 +1,30 @@
+<navbar></navbar>
+<h1>Hello {{ $ctrl.name }}</h1>
+<section class="crud-table">
+  <div ng-repeat="product in $ctrl.data">
+    <p>{{product.name}} {{product.nick}} {{product.age}}</p>
+  </div>
+  <ul ng-repeat="product in $ctrl.data">
+    <input type="text" value="{{product.name}}" ng-readonly='!($index == eEditable)' ng-dblclick="eEditable = $index" />
+    <input type="text" value="{{product.nick}}" ng-readonly='!($index == eEditable)' ng-dblclick="eEditable = $index" />
+    <button ng-click="$ctrl.data.splice($index, 1)">Delete</button>
+  </ul>
+  <form name="formPerson" ng-submit="AddPerson()">
+    <div class="dataeditable">
+      <input type="text" name="name" data-ng-model="Person.name" ng-pattern ="/^[a-zA-Z\s]*$/" placeholder="username" ng-minlength="3" ng-maxlength="20" required/>
+      <span ng-show="formPerson.name.$error.minlength">Username is too short.</span>
+      <span ng-show="formPerson.name.$error.maxlength">Username is too long.</span>
+      <span ng-show="formPerson.name.$error.pattern">Only string</span>
+      <span ng-show="formPerson.name.$error.required">Your username is required.</span>
+    </div>
+    <div class="dataeditable">
+      <input type="text" name="nick" data-ng-model="Person.nick" ng-pattern ="/^[a-zA-Z\s]*$/" placeholder="nick" ng-minlength="3" ng-maxlength="20" required/>
+        <span ng-show="formPerson.nick.$error.minlength">Username is too short.</span>
+        <span ng-show="formPerson.nick.$error.maxlength">Username is too long.</span>
+        <span ng-show="formPerson.nick.$error.pattern">Only string</span>
+        <span ng-show="formPerson.nick.$error.required">Your username is required.</span>
+      <div>
+    <input type="submit" ng-click="submitted = true" ng-disabled="userForm.$invalid"/>
+  </form>
+
+</section>
